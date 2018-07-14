@@ -19,4 +19,10 @@ contract('DappTokenSale', function (accounts) {
       assert.equal(price, tokenPrice, 'token price is correct');
     });
   });
+
+  it('facilitates token buying', function () {
+    return DappTokenSale.deployed().then(function (instance) {
+      tokenSaleInstance = instance;
+      return tokenSaleInstance.address;
+  });
 });

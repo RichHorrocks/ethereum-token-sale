@@ -17,4 +17,13 @@ contract DappTokenSale {
         // Token price.
         tokenPrice = _tokenPrice;
     }
+
+    function buyTokens(uint256 _numberOfTokens) public payable {
+        // Require that the value is equal to the tokens.
+        // Require that there are enough tokens in the contract.
+        // Require that the transfer is successful.
+        // Keep track of the number of tokens sold.
+
+        // Emit a Sell event.
+    }
 }
