@@ -23,6 +23,14 @@ contract('DappTokenSale', function (accounts) {
   it('facilitates token buying', function () {
     return DappTokenSale.deployed().then(function (instance) {
       tokenSaleInstance = instance;
-      return tokenSaleInstance.address;
+      var numberOfTokens = 10;
+      var value = numberOfTokens * tokenPrice;
+      return tokenSaleInstance.buyTokens(numberOfTokens,
+        { from: buyer,
+          value: value });
+  }).then(function (receipt) {
+    return tokenSaleInstance.tokensSold();
+  }).then(function (amount) {
+    assert.equal(amount.toNumber(), numberOfTokens, ' increments the number of tokens sold');
   });
 });
