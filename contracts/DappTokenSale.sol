@@ -41,11 +41,24 @@ contract DappTokenSale {
 
         // Require that the transfer is successful.
         require(tokenContract.transfer(msg.sender, _numberOfTokens));
-        
+
         // Keep track of the number of tokens sold.
         tokensSold += _numberOfTokens;
 
         // Emit a Sell event.
         emit Sell(msg.sender, _numberOfTokens);
+    }
+
+    function endSale() public {
+        // Require that only admin can do this.
+        require(msg.sender == admin);
+
+        // Transfer remaining tokens to admin.
+        require(tokenContract.transfer(
+            admin,
+            tokenContract.balanceOf(this)));
+
+        // Destroy this contract.
+        selfdestruct(admin);
     }
 }
