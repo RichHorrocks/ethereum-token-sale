@@ -1,0 +1,26 @@
+{
+  "name": "ethereum-token-sale",
+  "version": "1.0.0",
+  "description": "Dapp Token Sale ICO",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RichHorrocks/ethereum-token-sale.git"
+  },
+  "author": "Richard Horrocks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RichHorrocks/ethereum-token-sale/issues"
+  },
+  "homepage": "https://github.com/RichHorrocks/ethereum-token-sale#readme",
+  "dependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
